@@ -1,18 +1,19 @@
 import "./styles.css";
 import { cardBackgroundImage, cardsArr } from "./cardData.js";
 
-const cards = cardsArr.map((object, index) => {
-  return (
-    <img
-      key={index}
-      src={object.cardImage}
-      rank={object.rank}
-      suit={object.suit}
-    />
-  );
-});
-
 export default function App() {
+  const cards = cardsArr.map((object, index) => {
+    return (
+      <img
+        key={index}
+        src={object.cardImage}
+        rank={object.rank}
+        suit={object.suit}
+        alt="card"
+      />
+    );
+  });
+
   return (
     <div className="App">
       <header>
