@@ -7,7 +7,7 @@ const cards = cardsArr.map((object, index) => {
       key={index}
       src={object.cardImage}
       rank={object.rank}
-      suit={object.hearts}
+      suit={object.suit}
     />
   );
 });
@@ -35,7 +35,9 @@ export default function App() {
           </p>
           <div>
             <div id="message"></div>
-            <div id="game-board" class="board"></div>
+            <div id="game-board" class="board">
+              {cards}
+            </div>
           </div>
         </div>
       </main>
