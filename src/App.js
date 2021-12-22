@@ -1,4 +1,5 @@
 import "./styles.css";
+import { cardBackgroundImage, cardsArr } from "./cardData.js";
 
 export default function App() {
   return (
