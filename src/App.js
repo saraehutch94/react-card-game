@@ -58,33 +58,25 @@ export default function App() {
               <img
                 id="card0"
                 src={card.card0}
-                suit="hearts"
-                rank="queen"
-                alt="card"
+                alt="queen"
                 onClick={handleFlip}
               />
               <img
                 id="card1"
                 src={card.card1}
-                suit="diamonds"
-                rank="queen"
-                alt="card"
+                alt="queen"
                 onClick={handleFlip}
               />
               <img
                 id="card2"
                 src={card.card2}
-                suit="hearts"
-                rank="king"
-                alt="card"
+                alt="king"
                 onClick={handleFlip}
               />
               <img
                 id="card3"
                 src={card.card3}
-                suit="diamonds"
-                rank="king"
-                alt="card"
+                alt="king"
                 onClick={handleFlip}
               />
             </div>
