@@ -1,18 +1,36 @@
+import React, { useState } from "react";
+
 import "./styles.css";
-import { cardBackgroundImage, cardsArr } from "./cardData.js";
 
 export default function App() {
-  const cards = cardsArr.map((object, index) => {
-    return (
-      <img
-        key={index}
-        src={object.cardImage}
-        rank={object.rank}
-        suit={object.suit}
-        alt="card"
-      />
-    );
+  const [card, setCard] = useState({
+    card0:
+      "https://res.cloudinary.com/jkeohan/image/upload/v1511808091/back_xldk5l.png",
+    card1:
+      "https://res.cloudinary.com/jkeohan/image/upload/v1511808091/back_xldk5l.png",
+    card2:
+      "https://res.cloudinary.com/jkeohan/image/upload/v1511808091/back_xldk5l.png",
+    card3:
+      "https://res.cloudinary.com/jkeohan/image/upload/v1511808091/back_xldk5l.png"
   });
+
+  const handleFlip = (e) => {
+    const images = {
+      card0:
+        "https://res.cloudinary.com/jkeohan/image/upload/v1511808103/queen-of-hearts_nbvwls.png",
+      card1:
+        "https://res.cloudinary.com/jkeohan/image/upload/v1511808103/queen-of-diamonds_opxv6b.png",
+      card2:
+        "https://res.cloudinary.com/jkeohan/image/upload/v1511808103/king-of-hearts_njmwml.png",
+      card3:
+        "https://res.cloudinary.com/jkeohan/image/upload/v1511808103/king-of-diamonds_mpn7sm.png"
+    };
+
+    setCard({
+      ...card,
+      [e.target.id]: images[e.target.id]
+    });
+  };
 
   return (
     <div className="App">
@@ -36,17 +54,48 @@ export default function App() {
           </p>
           <div>
             <div id="message"></div>
-            <div id="game-board" class="board">
-              {cards}
+            <div id="game-board" className="board">
+              <img
+                id="card0"
+                src={card.card0}
+                suit="hearts"
+                rank="queen"
+                alt="card"
+                onClick={handleFlip}
+              />
+              <img
+                id="card1"
+                src={card.card1}
+                suit="diamonds"
+                rank="queen"
+                alt="card"
+                onClick={handleFlip}
+              />
+              <img
+                id="card2"
+                src={card.card2}
+                suit="hearts"
+                rank="king"
+                alt="card"
+                onClick={handleFlip}
+              />
+              <img
+                id="card3"
+                src={card.card3}
+                suit="diamonds"
+                rank="king"
+                alt="card"
+                onClick={handleFlip}
+              />
             </div>
           </div>
         </div>
       </main>
 
-      <footer class="clearfix">
-        <p class="copyright">COPYRIGHT 2017</p>
-        <p class="message">
-          Created with &hearts; by <span class="name">GA</span>
+      <footer className="clearfix">
+        <p className="copyright">COPYRIGHT 2017</p>
+        <p className="message">
+          Created with &hearts; by <span className="name">GA</span>
         </p>
       </footer>
     </div>
