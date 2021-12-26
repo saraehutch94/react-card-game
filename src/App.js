@@ -32,6 +32,14 @@ export default function App() {
     });
   };
 
+  if (card.card0.includes("queen") && card.card1.includes("queen")) {
+    console.log("hi");
+  }
+
+  if (card.card2.includes("king") && card.card3.includes("king")) {
+    console.log("bye");
+  }
+
   return (
     <div className="App">
       <header>
@@ -53,7 +61,7 @@ export default function App() {
             over pairs of matching cards.
           </p>
           <div>
-            <div id="message"></div>
+            <div id="message">You found a match!</div>
             <div id="game-board" className="board">
               <img
                 id="card0"
