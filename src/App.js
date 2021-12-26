@@ -33,12 +33,18 @@ export default function App() {
   };
 
   if (card.card0.includes("queen") && card.card1.includes("queen")) {
-    console.log("hi");
+    document.getElementById("game-board").style.opacity = "0.3";
+    document.getElementById("message").style.display = "block";
   }
 
   if (card.card2.includes("king") && card.card3.includes("king")) {
-    console.log("bye");
+    document.getElementById("game-board").style.opacity = "0.3";
+    document.getElementById("message").style.display = "block";
   }
+
+  // if (card.card2.includes("king") && card.card3.includes("king")) {
+  //   console.log("bye");
+  // }
 
   return (
     <div className="App">
