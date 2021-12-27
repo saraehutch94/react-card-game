@@ -42,10 +42,6 @@ export default function App() {
     document.getElementById("message").style.display = "block";
   }
 
-  // if (card.card2.includes("king") && card.card3.includes("king")) {
-  //   console.log("bye");
-  // }
-
   return (
     <div className="App">
       <header>
