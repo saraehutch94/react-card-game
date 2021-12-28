@@ -32,16 +32,6 @@ export default function App() {
     });
   };
 
-  if (card.card0.includes("queen") && card.card1.includes("queen")) {
-    document.getElementById("game-board").style.opacity = "0.3";
-    document.getElementById("message").style.display = "block";
-  }
-
-  if (card.card2.includes("king") && card.card3.includes("king")) {
-    document.getElementById("game-board").style.opacity = "0.3";
-    document.getElementById("message").style.display = "block";
-  }
-
   return (
     <div className="App">
       <header>
@@ -63,8 +53,31 @@ export default function App() {
             over pairs of matching cards.
           </p>
           <div>
-            <div id="message">You found a match!</div>
-            <div id="game-board" className="board">
+            <div
+              id="message"
+              style={{
+                display:
+                  (card.card0.includes("queen") &&
+                    card.card1.includes("queen")) ||
+                  (card.card2.includes("king") && card.card3.includes("king"))
+                    ? "block"
+                    : "none"
+              }}
+            >
+              You found a match!
+            </div>
+            <div
+              id="game-board"
+              className="board"
+              style={{
+                opacity:
+                  (card.card0.includes("queen") &&
+                    card.card1.includes("queen")) ||
+                  (card.card2.includes("king") && card.card3.includes("king"))
+                    ? "0.3"
+                    : "1"
+              }}
+            >
               <img
                 id="card0"
                 src={card.card0}
